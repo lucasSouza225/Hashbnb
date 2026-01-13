@@ -1,0 +1,26 @@
+frontend
+
+1- npm create vite@latest <NOME DO PROJETO>
+    Depois:
+        Escolha React
+        Escolha JavaScript ou TypeScript
+
+    Em seguida:
+        cd frontend
+        npm install
+        npm run dev
+
+2- npm install tailwindcss @tailwindcss/vite
+    2.1- npm install -D prettier prettier-plugin-tailwindcss
+    2.2- depos por esse plugin logo no começo do "packge.json" :
+
+    "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  },
+
+
+
+
+- npm install axios  react-router-dom
