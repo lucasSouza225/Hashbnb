@@ -23,7 +23,7 @@ frontend
 
 OBS: toda vez que for criar um component use "rafce" vai ajudar muito kkkkkkkkkk
 
-
+3- npm i axios 
 
 
 - npm install axios  react-router-dom jh

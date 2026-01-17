@@ -9,7 +9,7 @@ const bcryptSalt = bcrypt.genSaltSync();
 connectDb();
 
 router.get("/", async (req, res) => {
-    
+
     try {
         const users = await User.find();
         res.json(users);
@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    const {name, email, password} = req.body;
+    const { name, email, password } = req.body;
     const encryptedPassoword = bcrypt.hashSync(password, bcryptSalt)
     try {
         const newUser = await User.create({
@@ -33,5 +33,25 @@ router.post("/", async (req, res) => {
         res.status(500).json(error);
     }
 });
+
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const userDoc = await User.findOne({ email })
+        
+        if (userDoc) {
+            const passwordCorrect = bcrypt.compareSync(password, userDoc.password)
+            const {name, _id} = userDoc
+
+            passwordCorrect ? res.json({name, _id, email}) : res.status(400).json("Senha invalida!")
+        } else {
+            res.status(400).json("Usuario naão encontrato")
+        }
+
+    } catch (error) {
+        res.status(500).json(error);
+    }
+
+})
 
 export default router;
