@@ -1,3 +1,6 @@
+quando criar o projeto para poder salvar cookies no navegador
+npm i jsonwebtoken 
+
 frontend
 
 1- npm create vite@latest <NOME DO PROJETO>
@@ -47,3 +50,5 @@ backend
   4.1 criar um aquivo na pasta backend com o nome .env (para rodar suas  próprias variaveis no backend)
 
 5- npm install bcryptjs (para criptar a senha)
+
+6- npm i cookie-parser 
